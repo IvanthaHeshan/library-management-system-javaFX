@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Controllers.LoginPageController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="458.0" prefWidth="757.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginPageController">
+   <children>
+      <ImageView fitHeight="427.0" fitWidth="433.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/LoginPage.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="441.0" layoutY="80.0" prefHeight="55.0" prefWidth="165.0" text="Login">
+         <font>
+            <Font name="Segoe UI Bold" size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="441.0" layoutY="168.0" prefHeight="29.0" prefWidth="118.0" text="Username" />
+      <Label layoutX="441.0" layoutY="250.0" prefHeight="29.0" prefWidth="118.0" text="Password" />
+      <TextField fx:id="txtUserName" layoutX="439.0" layoutY="198.0" prefHeight="26.0" prefWidth="239.0" promptText="Enter username" />
+      <PasswordField fx:id="txtPassword" layoutX="439.0" layoutY="280.0" prefHeight="26.0" prefWidth="239.0" promptText="Enter password" />
+      <Button fx:id="btnLogin" layoutX="439.0" layoutY="346.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="26.0" prefWidth="159.0" style="-fx-base: #2F7FAD;" text="Login" textFill="WHITE">
+         <effect>
+            <Blend mode="GREEN" opacity="0.54" />
+         </effect>
+      </Button>
+      <Button fx:id="btnClear" layoutX="611.0" layoutY="346.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="26.0" prefWidth="66.0" text="Clear" />
+      <Label cache="true" cacheHint="SPEED" layoutX="444.0" layoutY="138.0" prefHeight="18.0" prefWidth="159.0" text="Library Management System" textFill="#b1b1b1" />
+      <Label fx:id="lblError" layoutX="439.0" layoutY="315.0" prefHeight="18.0" prefWidth="239.0" textFill="#d32f2f" />
+   </children>
 </AnchorPane>
