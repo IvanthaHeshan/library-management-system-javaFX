@@ -1,0 +1,40 @@
+/* Dark sidebar navigation buttons */
+.nav-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e2e8f0;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 15 10 15;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.nav-btn:hover {
+    -fx-background-color: #334155;
+    -fx-text-fill: white;
+}
+
+.nav-btn:pressed {
+    -fx-background-color: #2F7FAD;
+}
+
+/* Logout button at the bottom */
+.logout-btn {
+    -fx-background-color: #991b1b;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.logout-btn:hover {
+    -fx-background-color: #dc2626;
+}
+
+/* White summary cards with a subtle shadow */
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 10, 0, 0, 2);
+}
