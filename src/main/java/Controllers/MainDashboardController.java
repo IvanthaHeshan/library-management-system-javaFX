@@ -1,6 +1,7 @@
 package Controllers;
 
 import Controllers.AddBook.AddBookController;
+import Controllers.AddMember.AddMemberController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,6 +35,9 @@ public class MainDashboardController implements Initializable {
     @FXML
     private Label lblTotalBooks;
 
+    @FXML
+    private Label lblTotalMembers;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         updateDashboardCounts();
@@ -41,6 +45,7 @@ public class MainDashboardController implements Initializable {
 
     private void updateDashboardCounts() {
         lblTotalBooks.setText(String.valueOf(AddBookController.getTotalBookCount()));
+        lblTotalMembers.setText(String.valueOf(AddMemberController.getTotalMemberCount()));
     }
 
     @FXML
@@ -49,14 +54,24 @@ public class MainDashboardController implements Initializable {
         mainBorderPane.setCenter(dashboardOverviewPane);
     }
 
-    @FXML
-    void btnAddBookOnAction(ActionEvent event) {
+    private void loadCenterView(String fxmlPath) {
         try {
-            Parent addBookView = FXMLLoader.load(getClass().getResource("/View/AddBook.fxml"));
-            mainBorderPane.setCenter(addBookView);
+            Parent view = FXMLLoader.load(getClass().getResource(fxmlPath));
+            mainBorderPane.setCenter(view);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+    }
+
+    @FXML
+    void btnAddBookOnAction(ActionEvent event) {
+        loadCenterView("/View/AddBookPage.fxml");
+    }
+
+    @FXML
+    void btnAddMemberOnAction(ActionEvent event) {
+        loadCenterView("/View/AddMemberPage.fxml");
     }
 
     @FXML
